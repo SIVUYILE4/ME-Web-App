@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+
+{% block page_title %}Home - Commission Dashboard{% endblock %}
+
+{% block content %}
+<p class="lead">Welcome to the Commission Dashboard. This is the main landing page.</p>
+
+<!-- Summary Cards -->
+<div class="row mb-4" id="summary-cards">
+    <div class="col-md-3 mb-3">
+        <div class="card bg-primary text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h6 class="card-title">Total Commission</h6>
+                        <h3 id="total-amount">R0</h3>
+                    </div>
+                    <div class="align-self-center">
+                        <i class="bi bi-currency-dollar fs-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-3">
+        <div class="card bg-success text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h6 class="card-title">New Business Premium</h6>
+                        <h3 id="new-business-premium">R0</h3>
+                    </div>
+                    <div class="align-self-center">
+                        <i class="bi bi-graph-up-arrow fs-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-3">
+        <div class="card bg-info text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h6 class="card-title">Total Clients</h6>
+                        <h3 id="total-clients">0</h3>
+                    </div>
+                    <div class="align-self-center">
+                        <i class="bi bi-people fs-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-3">
+        <div class="card bg-warning text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h6 class="card-title">Total Products</h6>
+                        <h3 id="total-products">0</h3>
+                    </div>
+                    <div class="align-self-center">
+                        <i class="bi bi-box fs-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Stats -->
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-info-circle"></i> Database Information
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p><strong>Server:</strong> CL-JHB-SQL-01</p>
+                        <p><strong>Database:</strong> Quill</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p><strong>Product Categories:</strong> <span id="product-categories">0</span></p>
+                        <p><strong>Personality Types:</strong> <span id="personality-types">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-activity"></i> System Status
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p><strong>Total Records:</strong> <span id="total-records">0</span></p>
+                        <p><strong>Connection:</strong> <span class="badge bg-success">Active</span></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p><strong>Last Updated:</strong> <span id="last-updated">Never</span></p>
+                        <p><strong>Data Status:</strong> <span class="badge bg-info">Ready</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation Cards -->
+<div class="row">
+    <div class="col-12">
+        <h3 class="mb-3">Navigate to Sections</h3>
+    </div>
+    
+    <div class="col-md-3 mb-3">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <i class="bi bi-graph-up fs-1 text-primary mb-3"></i>
+                <h5 class="card-title">Trends</h5>
+                <p class="card-text">View commission trends over time</p>
+                <a href="{{ url_for('main.trends') }}" class="btn btn-primary">Go to Trends</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-3">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <i class="bi bi-currency-dollar fs-1 text-success mb-3"></i>
+                <h5 class="card-title">Gross Commission</h5>
+                <p class="card-text">View gross commission details</p>
+                <a href="{{ url_for('main.gross_commission') }}" class="btn btn-success">Go to Gross</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-3">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <i class="bi bi-piggy-bank fs-1 text-warning mb-3"></i>
+                <h5 class="card-title">Net Commission</h5>
+                <p class="card-text">View net commission details</p>
+                <a href="{{ url_for('main.net_commission') }}" class="btn btn-warning">Go to Net</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-3">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <i class="bi bi-arrow-repeat fs-1 text-info mb-3"></i>
+                <h5 class="card-title">Refresh Data</h5>
+                <p class="card-text">Update dashboard data</p>
+                <button class="btn btn-info" onclick="refreshData()">Refresh Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Load summary data when page loads
+$(document).ready(function() {
+    loadSummaryData();
+});
+
+function loadSummaryData() {
+    showLoading();
+    
+    $.get('/api/commission-summary')
+        .done(function(response) {
+            if (response.status === 'success') {
+                const summary = response.summary;
+                
+                // Update summary cards
+                $('#total-amount').text('R' + formatNumber(summary.total_amount));
+                $('#new-business-premium').text('R' + formatNumber(summary.total_new_business_premium));
+                $('#total-clients').text(formatNumber(summary.total_clients));
+                $('#total-products').text(formatNumber(summary.total_products));
+                
+                // Update database info
+                $('#product-categories').text(summary.product_categories_count);
+                $('#personality-types').text(summary.personality_types_count);
+                $('#total-records').text(formatNumber(summary.total_records));
+                
+                // Update last updated time
+                $('#last-updated').text(new Date().toLocaleString());
+            } else {
+                showNotification('Error loading summary data: ' + response.message, 'error');
+            }
+        })
+        .fail(function() {
+            showNotification('Error connecting to server', 'error');
+            updateConnectionStatus(false);
+        })
+        .always(function() {
+            hideLoading();
+        });
+}
+
+function refreshData() {
+    loadSummaryData();
+}
+
+function formatNumber(num) {
+    return num ? num.toLocaleString('en-ZA', {minimumFractionDigits: 2, maximumFractionDigits: 2}) : '0';
+}
+</script>
+{% endblock %}

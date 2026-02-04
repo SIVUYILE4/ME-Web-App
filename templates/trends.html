@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block page_title %}Trends - Commission Dashboard{% endblock %}
+
+{% block content %}
+<p class="lead">This section will display commission trends over time.</p>
+
+<!-- Placeholder Content -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-info-circle"></i> Under Development
+                </h5>
+            </div>
+            <div class="card-body text-center">
+                <i class="bi bi-construction fs-1 text-muted mb-3"></i>
+                <h4>Trends Analysis Coming Soon</h4>
+                <p class="text-muted">This section will contain time-based analysis of commission data, including:</p>
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-check-circle text-success"></i> Monthly commission trends</li>
+                    <li><i class="bi bi-check-circle text-success"></i> Year-over-year comparisons</li>
+                    <li><i class="bi bi-check-circle text-success"></i> Product category performance over time</li>
+                    <li><i class="bi bi-check-circle text-success"></i> Personality type trend analysis</li>
+                </ul>
+                <div class="mt-4">
+                    <button class="btn btn-primary" onclick="alert('Trends functionality will be implemented in the next phase')">
+                        <i class="bi bi-clock"></i> Coming Soon
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sample Chart Placeholder -->
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="card-title mb-0">Commission Trend Chart Placeholder</h6>
+            </div>
+            <div class="card-body">
+                <canvas id="trendsChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="card-title mb-0">Performance Metrics Placeholder</h6>
+            </div>
+            <div class="card-body">
+                <div class="text-center text-muted">
+                    <i class="bi bi-bar-chart fs-1"></i>
+                    <p class="mt-2">Chart will be implemented here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Placeholder for future trends functionality
+$(document).ready(function() {
+    // Create a placeholder chart
+    const ctx = document.getElementById('trendsChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Commission Trends (Placeholder)',
+                data: [0, 0, 0, 0, 0, 0],
+                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                tension: 0.1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Sample Trends Chart - Data will be populated here'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+});
+</script>
+{% endblock %}

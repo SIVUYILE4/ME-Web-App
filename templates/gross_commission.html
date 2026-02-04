@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block page_title %}Gross Commission - Commission Dashboard{% endblock %}
+
+{% block content %}
+<p class="lead">This section will display gross commission details and analysis.</p>
+
+<!-- Placeholder Content -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-info-circle"></i> Under Development
+                </h5>
+            </div>
+            <div class="card-body text-center">
+                <i class="bi bi-construction fs-1 text-muted mb-3"></i>
+                <h4>Gross Commission Analysis Coming Soon</h4>
+                <p class="text-muted">This section will contain detailed gross commission information, including:</p>
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-check-circle text-success"></i> Total gross commission by period</li>
+                    <li><i class="bi bi-check-circle text-success"></i> Gross commission by product category</li>
+                    <li><i class="bi bi-check-circle text-success"></i> Gross commission by personality type</li>
+                    <li><i class="bi bi-check-circle text-success"></i> Gross commission breakdown by type</li>
+                </ul>
+                <div class="mt-4">
+                    <button class="btn btn-success" onclick="alert('Gross commission functionality will be implemented in the next phase')">
+                        <i class="bi bi-clock"></i> Coming Soon
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sample Chart Placeholder -->
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="card-title mb-0">Gross Commission by Category</h6>
+            </div>
+            <div class="card-body">
+                <canvas id="grossCommissionChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="card-title mb-0">Gross Commission Summary</h6>
+            </div>
+            <div class="card-body">
+                <div class="text-center text-muted">
+                    <i class="bi bi-pie-chart fs-1"></i>
+                    <p class="mt-2">Chart will be implemented here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Data Table Placeholder -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="card-title mb-0">Gross Commission Data Table</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Month</th>
+                                <th>Product Category</th>
+                                <th>Type</th>
+                                <th>Personality</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="6" class="text-center text-muted">
+                                    <i class="bi bi-table"></i> Data will be populated here
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Placeholder for future gross commission functionality
+$(document).ready(function() {
+    // Create a placeholder chart
+    const ctx = document.getElementById('grossCommissionChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Category A', 'Category B', 'Category C', 'Category D'],
+            datasets: [{
+                label: 'Gross Commission (Placeholder)',
+                data: [0, 0, 0, 0],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Sample Gross Commission Chart - Data will be populated here'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+});
+</script>
+{% endblock %}
