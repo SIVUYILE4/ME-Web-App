@@ -12,8 +12,10 @@ class CommissionData:
         
         # The complex SQL query provided
         query = f"""
-        DECLARE @sdate DATE = DATEADD(MONTH, -2, CAST(GETDATE() AS DATE));
-        DECLARE @edate DATE = {end_date};
+        -- Start date: First day of 2 months ago (excluding current month)
+        DECLARE @sdate DATE = DATEADD(MONTH, -2, DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), 0));
+        -- End date: Last day of last month (excluding current month)
+        DECLARE @edate DATE = DATEADD(DAY, -1, DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), 0));
         WITH CTE AS (
           SELECT 
             Year(CommissionDate) as Year, 
