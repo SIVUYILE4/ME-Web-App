@@ -173,10 +173,7 @@
 
 {% block scripts %}
 <script>
-// Load summary data when page loads
-$(document).ready(function() {
-    loadSummaryData();
-});
+// Data only loads when "Refresh Now" button is clicked
 
 function loadSummaryData() {
     showLoading();

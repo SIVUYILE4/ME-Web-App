@@ -6,12 +6,12 @@ let isDataLoading = false;
 // Utility functions
 function showLoading() {
     isDataLoading = true;
-    $('#loading-overlay').removeClass('d-none');
+    $('#loading-overlay').addClass('show');
 }
 
 function hideLoading() {
     isDataLoading = false;
-    $('#loading-overlay').addClass('d-none');
+    $('#loading-overlay').removeClass('show');
 }
 
 function showNotification(message, type = 'info') {
@@ -147,8 +147,7 @@ $(document).ready(function() {
     // Initialize popovers
     $('[data-bs-toggle="popover"]').popover();
     
-    // Set up periodic connection check
-    setInterval(checkConnection, 30000); // Check every 30 seconds
+    // Periodic connection check disabled - only checks on manual refresh
     
     // Add smooth scrolling to anchor links
     $('a[href^="#"]').on('click', function(event) {
@@ -161,12 +160,7 @@ $(document).ready(function() {
         }
     });
     
-    // Auto-refresh data every 5 minutes
-    setInterval(() => {
-        if (!isDataLoading && $('.page-content').length > 0) {
-            refreshCurrentPage();
-        }
-    }, 300000); // 5 minutes
+    // Auto-refresh disabled - data loads only on manual refresh
 });
 
 function checkConnection() {
